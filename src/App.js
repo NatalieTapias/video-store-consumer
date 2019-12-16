@@ -6,10 +6,37 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Movies from './components/Movies';
+import MovieCollection from './components/MovieCollection';
 import Customers from './components/Customers';
 import Search from './components/Search';
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+     //movies?
+     //customers??
+    };
+  }
+
+  componentDidMount() {
+    axios.get(URL)
+    .then((response) => {
+      
+      // let cardsFromApi = response.data.map((cardData) => {
+      //   return cardData.card;   
+      // })
+  
+      // this.setState({ 
+      //   cards: cardsFromApi,
+      //   error: '' 
+      // });
+    })
+    .catch((error) => {
+      this.setState({ error: error.message });
+    });
+
+
   render() {
     return (
       <div className="app">
@@ -20,7 +47,7 @@ class App extends Component {
               <nav>
                 <ul>
                   <li>
-                    <Link to="/">Movies</Link>
+                    <Link to="/">Movies/MovieCollection</Link>
                   </li>
                   <li>
                     <Link to="/customers">Customers</Link>
@@ -41,7 +68,7 @@ class App extends Component {
               <Search />
             </Route> 
             <Route path="/">
-              <Movies />
+              <MovieCollection movies={this.state.movies}/>
             </Route>
           </Switch>
 
