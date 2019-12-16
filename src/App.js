@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,13 +17,13 @@ class App extends Component {
     this.state = {
      //movies?
      //customers??
-    };
-  }
+    }
+  };
 
   componentDidMount() {
-    axios.get(URL)
+    axios.get('http://localhost:3001')
     .then((response) => {
-      
+      console.log(response.data);
       // let cardsFromApi = response.data.map((cardData) => {
       //   return cardData.card;   
       // })
@@ -35,8 +36,7 @@ class App extends Component {
     .catch((error) => {
       this.setState({ error: error.message });
     });
-
-
+  }
   render() {
     return (
       <div className="app">
@@ -68,7 +68,7 @@ class App extends Component {
               <Search />
             </Route> 
             <Route path="/">
-              <MovieCollection movies={this.state.movies}/>
+              <MovieCollection movies={"a few movies"} />
             </Route>
           </Switch>
 
