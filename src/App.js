@@ -6,6 +6,9 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Movies from './components/Movies';
+import Customers from './components/Customers';
+import Search from './components/Search';
 class App extends Component {
   render() {
     return (
@@ -29,6 +32,19 @@ class App extends Component {
               </nav>
             </div>
           </header>
+
+          <Switch>
+            <Route path="/customers">
+              <Customers />
+            </Route>
+            <Route path="/search">
+              <Search />
+            </Route> 
+            <Route path="/">
+              <Movies />
+            </Route>
+          </Switch>
+
         </Router>
       </div>  
     );
