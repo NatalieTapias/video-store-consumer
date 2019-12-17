@@ -89,10 +89,10 @@ class App extends Component {
                   <li>
                     <Link to="/search">Search</Link>
                   </li>
-                  <li><SelectedMovie movie={this.state.selectedMovie} /></li>
                 </ul>
               </nav>
             </div>
+            <div><SelectedMovie movie={this.state.selectedMovie} /></div>
           </header>
           
           <Switch>
