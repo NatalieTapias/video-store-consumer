@@ -13,6 +13,7 @@ const CustomerList = (props) => {
             account_credit={oneCustomer.account_credit}
             movies_checked_out_count={oneCustomer.movies_checked_out_count}
             key={i}
+            selectCustomerCallback={props.selectCustomerCallback}
             />);
           })}
       </>

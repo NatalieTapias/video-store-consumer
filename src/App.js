@@ -19,7 +19,7 @@ class App extends Component {
 
     this.state = {
      movies: [],
-     customers: '',
+     customers: [],
      movieSearchResult: '',
      selectedMovieDisplay: false,
      selectedMovie: {},
@@ -113,7 +113,8 @@ class App extends Component {
           
           <Switch>
             <Route path="/customers">
-              <CustomerList allCustomers={this.state.customers} />
+              <CustomerList allCustomers={this.state.customers}
+              selectCustomerCallback={this.selectCustomer} />
             </Route>
             <Route path="/search">
               <Search />
