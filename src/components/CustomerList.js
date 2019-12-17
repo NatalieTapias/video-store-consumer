@@ -10,6 +10,8 @@ const CustomerList = (props) => {
           <Customer
             id={oneCustomer.id}
             name={oneCustomer.name}
+            account_credit={oneCustomer.account_credit}
+            movies_checked_out_count={oneCustomer.movies_checked_out_count}
             key={i}
             />);
           })}

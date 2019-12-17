@@ -10,7 +10,8 @@ import {
 import MovieCollection from './components/MovieCollection';
 import CustomerList from './components/CustomerList';
 import Search from './components/Search';
-import SelectedMovie from './components/SelectedMovie'
+import SelectedMovie from './components/SelectedMovie';
+import SelectedCustomer from './components/SelectedCustomer'
 
 class App extends Component {
   constructor() {
@@ -22,6 +23,8 @@ class App extends Component {
      movieSearchResult: '',
      selectedMovieDisplay: false,
      selectedMovie: {},
+     selectedCustomerDisplay: false,
+     selectedCustomer: {}
     }
   };
 
@@ -71,6 +74,18 @@ class App extends Component {
     console.log(this.state.selectedMovieDisplay)
   }
 
+  selectCustomer = (id) => {
+    const customers = this.state.customers;
+    const currentCustomer = customers.find((customer) => {
+      return customer.id === id;
+    });
+
+    this.setState({
+      selectedCustomer: currentCustomer,
+      selectedCustomerDisplay: true
+    });
+  }
+
   render() {
     return (
       <div className="app">
@@ -93,6 +108,7 @@ class App extends Component {
               </nav>
             </div>
             <div><SelectedMovie movie={this.state.selectedMovie} /></div>
+            <div><SelectedCustomer customer={this.state.selectedCustomer} /></div>
           </header>
           
           <Switch>
