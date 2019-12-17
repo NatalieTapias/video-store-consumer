@@ -58,12 +58,17 @@ class App extends Component {
   }
 
   selectMovie = (id) => {
-    const movies = this.movies;
-    const selectedMovie = movies.find((movie) => {
+    const movies = this.state.movies;
+    const currentMovie = movies.find((movie) => {
       return movie.id === id;
     });
-    this.setState({ selectedMovie });
+    this.setState({
+      selectedMovie: currentMovie
+    }
+    );
     this.setState({selectedMovieDisplay: true});
+    console.log(this.state.selectedMovie)
+    console.log(this.state.selectedMovieDisplay)
   }
 
   render() {
@@ -84,6 +89,7 @@ class App extends Component {
                   <li>
                     <Link to="/search">Search</Link>
                   </li>
+                  <li><SelectedMovie movie={this.state.selectedMovie} /></li>
                 </ul>
               </nav>
             </div>
