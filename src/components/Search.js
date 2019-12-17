@@ -26,7 +26,7 @@ class Search extends Component {
       let foundMovie = response.data;
 
       this.setState({ 
-        searchResult: foundMovie,
+        searchResults: foundMovie,
         showSearchResult: true,
       });
       console.log('foundMovie', foundMovie);
@@ -59,8 +59,21 @@ class Search extends Component {
       ) 
     } else {
       return (
-      <SearchResult />
-      )
+        <>
+        {(this.state.searchResults).map((movie, i) => {
+        return(
+          <SearchResult 
+          id={movie.id}
+          key={i}
+          title={movie.title}
+          overview={movie.overview}
+          release_date={movie.release_date}
+          image_url={movie.image_url}
+          external_id={movie.external_id} />
+        )})
+      }
+      </>
+      );
     }
   };
 }

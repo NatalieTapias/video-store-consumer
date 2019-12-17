@@ -7,9 +7,7 @@ const Movie = (props) => {
         <p>title {props.title}</p>
         <p>overview {props.overview}</p>
         <p>release date {props.release_date}</p>
-        <img src={props.image_url}  /> 
-        {/* to do: add alt text to img tag */}
-    
+        <img src={props.image_url} alt={props.title} /> 
       </div>
     )
   };
