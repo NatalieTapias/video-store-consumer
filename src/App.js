@@ -16,9 +16,21 @@ class App extends Component {
 
     this.state = {
      movies: [],
-     customers: ''
+     customers: '',
+     movieSearchResult: '',
     }
   };
+
+  onSubmitSearch = (searchTerm) => {
+    axios.get(`http://localhost:3001/movies?query=<${searchTerm}>/search`)
+    .then((response) => {
+      let foundMovie = response.data;
+
+      this.setState({ 
+        movieSearchResult: foundMovie,
+      });
+    })
+  }
 
   componentDidMount() {
     axios.get('http://localhost:3001/movies')

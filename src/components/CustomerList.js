@@ -14,7 +14,6 @@ const CustomerList = (props) => {
             />);
           })}
       </>
-      // <p>{console.log(props.allCustomers)}</p>
     );
   };
   
