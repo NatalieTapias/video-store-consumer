@@ -23,11 +23,16 @@ class App extends Component {
   componentDidMount() {
     axios.get('http://localhost:3001/movies')
     .then((response) => {
-    
+      let moviesListFromApi = response.data.map((movieData) => {
+        return movieData;   
+      });
+      
       this.setState({ 
-        movies: [response.data],
+        movies: moviesListFromApi,
         error: '' 
       });
+
+      console.log(`response data ${response.data}`)
     
     })
     .catch((error) => {
