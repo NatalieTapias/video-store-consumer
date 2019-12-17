@@ -10,6 +10,8 @@ import {
 import MovieCollection from './components/MovieCollection';
 import CustomerList from './components/CustomerList';
 import Search from './components/Search';
+import SelectedMovie from './components/SelectedMovie'
+
 class App extends Component {
   constructor() {
     super();
@@ -18,10 +20,10 @@ class App extends Component {
      movies: [],
      customers: '',
      movieSearchResult: '',
+     selectedMovieDisplay: false,
+     selectedMovie: {},
     }
   };
-
-  
 
   componentDidMount() {
     axios.get('http://localhost:3001/movies')
@@ -55,6 +57,15 @@ class App extends Component {
     });
   }
 
+  selectMovie = (id) => {
+    const movies = this.movies;
+    const selectedMovie = movies.find((movie) => {
+      return movie.id === id;
+    });
+    this.setState({ selectedMovie });
+    this.setState({selectedMovieDisplay: true});
+  }
+
   render() {
     return (
       <div className="app">
@@ -86,7 +97,8 @@ class App extends Component {
               <Search />
             </Route> 
             <Route path="/">
-              <MovieCollection allMovies={this.state.movies} />
+              <MovieCollection 
+                allMovies={this.state.movies} selectMovieCallback={this.selectMovie} />
             </Route>
           </Switch>
 

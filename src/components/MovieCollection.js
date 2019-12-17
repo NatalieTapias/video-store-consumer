@@ -14,8 +14,9 @@ const MovieCollection = (props) => {
           overview={movie.overview}
           release_date={movie.release_date}
           image_url={movie.image_url}
-          external_id={movie.external_id} />);
-        })}
+          external_id={movie.external_id}
+          selectMovieCallback={props.selectMovieCallback}    /> 
+    )   })}
       </>
     );
   };
