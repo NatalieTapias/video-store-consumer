@@ -5,7 +5,7 @@ const MovieCollection = (props) => {
 
     return (
       <>
-      {(props.allMovies).map((movie,i) => {
+      {(props.allMovies).map((movie, i) => {
         return(
         <Movie 
           id={movie.id}
