@@ -28,22 +28,18 @@ class Search extends Component {
   render() {
     return (
     <form onSubmit={this.handleSubmit}>
-      <div>
-        <label>Search for a video: </label>
+      <span>
+        <label>Search for a video:</label>
         <textarea
           value={this.state.searchTerm}
           placeholder="enter search term here"
           name="searchbar"
           onChange={this.handleChange} />
-      </div>
-
-      <div>
+      </span>
         <input 
           type="submit" 
           value="Submit" 
           onClick={this.handleSubmit}/>
-      </div>
-
     </form>
     );
     }
