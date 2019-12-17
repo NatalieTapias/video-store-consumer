@@ -8,7 +8,7 @@ import {
   Link
 } from "react-router-dom";
 import MovieCollection from './components/MovieCollection';
-import Customers from './components/Customers';
+import CustomerList from './components/CustomerList';
 import Search from './components/Search';
 class App extends Component {
   constructor() {
@@ -35,7 +35,23 @@ class App extends Component {
     .catch((error) => {
       this.setState({ error: error.message });
     });
+
+    axios.get('http://localhost:3001/customers')
+    .then((response) => {
+      let customersListFromApi = response.data.map((customerData) => {
+        return customerData;   
+      });
+
+      this.setState({ 
+        customers: customersListFromApi,
+        error: '' 
+      });
+    })
+    .catch((error) => {
+      this.setState({ error: error.message });
+    });
   }
+
   render() {
     return (
       <div className="app">
@@ -58,10 +74,10 @@ class App extends Component {
               </nav>
             </div>
           </header>
-
+          
           <Switch>
             <Route path="/customers">
-              <Customers />
+              <CustomerList allCustomers={this.state.customers} />
             </Route>
             <Route path="/search">
               <Search />
