@@ -2,13 +2,15 @@ import React from 'react';
 
 const Movie = (props) => {
     return (
-      <>
-        <p>id {props.id}</p>
+      <div className="movie-card">
+        {/* <p>id {props.id}</p> */}
         <p>title {props.title}</p>
         <p>overview {props.overview}</p>
         <p>release date {props.release_date}</p>
-        {console.log(props)}
-      </>
+        <img src={props.image_url}  /> 
+        {/* to do: add alt text to img tag */}
+    
+      </div>
     )
   };
 

@@ -26,14 +26,11 @@ class App extends Component {
       let moviesListFromApi = response.data.map((movieData) => {
         return movieData;   
       });
-      
+
       this.setState({ 
         movies: moviesListFromApi,
         error: '' 
       });
-
-      console.log(`response data ${response.data}`)
-    
     })
     .catch((error) => {
       this.setState({ error: error.message });
