@@ -15,23 +15,20 @@ class App extends Component {
     super();
 
     this.state = {
-     //movies?
-     //customers??
+     movies: [],
+     customers: ''
     }
   };
 
   componentDidMount() {
-    axios.get('http://localhost:3001')
+    axios.get('http://localhost:3001/movies')
     .then((response) => {
-      console.log(response.data);
-      // let cardsFromApi = response.data.map((cardData) => {
-      //   return cardData.card;   
-      // })
-  
-      // this.setState({ 
-      //   cards: cardsFromApi,
-      //   error: '' 
-      // });
+    
+      this.setState({ 
+        movies: [response.data],
+        error: '' 
+      });
+    
     })
     .catch((error) => {
       this.setState({ error: error.message });
@@ -68,7 +65,7 @@ class App extends Component {
               <Search />
             </Route> 
             <Route path="/">
-              <MovieCollection movies={"a few movies"} />
+              <MovieCollection allMovies={this.state.movies} />
             </Route>
           </Switch>
 

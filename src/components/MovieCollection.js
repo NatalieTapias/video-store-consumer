@@ -1,19 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import axios from 'axios';
 import Movie from './Movie'
 
-class MovieCollection extends Component {
-
-
-
-  render() {
+const MovieCollection = (props) => {
     return (
-      <>
-        <p>collection of movies</p>
-        <Movie />
-      </>
+       <>
+        { props.allMovies.map((movie, i) => {
+            return(
+              <Movie 
+                id={movie.id}
+                key={i}
+                title={movie.title}
+                overview={movie.overview}
+                release_date={movie.release_date}
+                image_url={movie.image_url}
+                external_id={movie.external_id} />
+            );
+          })
+          }
+   </>
     );
-    }
   };
 
 export default MovieCollection;
