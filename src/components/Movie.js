@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Movie extends Component {
-  render() {
+const Movie = (props) => {
+
     return (
-    <p>a movie</p>
+      <>
+    <p>id {props.id}</p>
+    <p>title {props.title}</p>
+   {console.log(props)}
+    </>
     );
-    }
+    
   };
 
 export default Movie;

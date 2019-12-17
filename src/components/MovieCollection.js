@@ -5,8 +5,10 @@ import Movie from './Movie'
 const MovieCollection = (props) => {
     return (
        <>
-        { props.allMovies.map((movie, i) => {
+       {console.log("in movie collection", props)}
+        { (props.allMovies).map((movie, i) => {
             return(
+              
               <Movie 
                 id={movie.id}
                 key={i}
@@ -15,6 +17,7 @@ const MovieCollection = (props) => {
                 release_date={movie.release_date}
                 image_url={movie.image_url}
                 external_id={movie.external_id} />
+                
             );
           })
           }
