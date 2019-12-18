@@ -11,3 +11,8 @@ img {
   height: 100px;
   width: auto;
 }
+
+.card {
+  height: 800px;
+  margin-top: 50px;
+}

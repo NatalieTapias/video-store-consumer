@@ -10,11 +10,9 @@ const SearchResult = ({title, overview, release_date, movie, addMovieCallback, i
         <div className="card-body">
           <img src={image_url}  alt={title}/>
           {overview}
+          <p>release date {release_date}</p>
+          <button onClick={ () => { addMovieCallback(movie)} } className="btn btn-primary"> Add {title} to Rental Library</button>
         </div>
-        
-        <p>release date {release_date}</p>
-        
-        <button onClick={ () => { addMovieCallback(movie)} } className="btn btn-primary"> Add {title} to Rental Library</button>
       </div>
     </div>
   )
