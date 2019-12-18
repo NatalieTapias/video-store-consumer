@@ -120,7 +120,7 @@ class App extends Component {
     return (
       <div className="app">
         <Router>
-          <header className="App-header">
+          <header className="jumbotron jumbotron-fluid">
             <h1>Kingrey & Tapias VideoStore</h1>
             <div>
               <nav className="navbar">
@@ -134,17 +134,20 @@ class App extends Component {
                   <li>
                     <Link to="/search" className="btn btn-primary">Search</Link>
                   </li>
-                  {this.state.selectedMovie && (
-                    <li><SelectedMovie movie={this.state.selectedMovie} /></li>
-                  )}
-                  {this.state.selectedCustomer && (
-                    <li><SelectedCustomer customer={this.state.selectedCustomer} />
+                  <li>
+                    {this.state.selectedMovie && (
+                      <SelectedMovie movie={this.state.selectedMovie} />
+                    )}
+
+                    {this.state.selectedCustomer && (
+                    <SelectedCustomer customer={this.state.selectedCustomer} />
+                    )}
                     {this.state.selectedCustomer && this.state.selectedMovie && (
                       <button 
                         onClick={this.handleCheckoutMovieClick} 
-                        className="btn btn-secondary">Checkout Movie</button>
-                    )}</li>
-                  )}
+                        className="btn btn-primary">Checkout Movie</button>
+                    )}
+                  </li>
                 </ul>
               </nav>
             </div>
