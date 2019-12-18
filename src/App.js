@@ -143,9 +143,9 @@ class App extends Component {
                     <SelectedCustomer customer={this.state.selectedCustomer} />
                     )}
                     {this.state.selectedCustomer && this.state.selectedMovie && (
-                      <button 
+                      <div><button 
                         onClick={this.handleCheckoutMovieClick} 
-                        className="btn btn-primary">Checkout Movie</button>
+                    className="btn btn-primary">Click to Check Out Movie</button></div>
                     )}
                   </li>
                 </ul>

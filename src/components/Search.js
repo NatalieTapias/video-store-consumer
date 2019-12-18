@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SearchResult from './SearchResult';
+
 class Search extends Component {
 
   constructor(props) {
@@ -40,18 +41,22 @@ class Search extends Component {
     if (this.state.showSearchResult === false) {
       return (
         <>
-        <form onSubmit={this.handleSubmit}>
-          <span>
-            <label>Search for a video:</label>
-            <textarea
+        <form onSubmit={this.handleSubmit} className="container-sm">
+          <div className="form-group">
+            <label for="videoSearch">Search for a video:</label>
+            <input 
+              type="text"
+              className="form-control"
               value={this.state.searchTerm}
-              placeholder="enter movie title here"
+              placeholder="enter search term here"
               onChange={this.handleChange} />
-          </span>
+            <small id="textHelp">Enter the name of a movie to search on The Movie Database</small>
+          </div>
             <input 
               type="submit" 
               value="Submit" 
-              onClick={this.handleSubmit}/>
+              onClick={this.handleSubmit}
+              className="btn btn-primary" />
         </form>
         
       
