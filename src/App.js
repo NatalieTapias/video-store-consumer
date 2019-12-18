@@ -126,8 +126,12 @@ class App extends Component {
               <nav className="navbar">
                 <ul className="row">
                   <li>
-                    <Link to="/" className="btn btn-primary">Rental Library</Link>
+                    <Link to='/' className="btn btn-primary">Home</Link>
                   </li>
+                  <li>
+                    <Link to='/movies' className="btn btn-primary">Rental Library</Link>
+                  </li>
+                 
                   <li>
                     <Link to="/customers" className="btn btn-primary">Customers</Link>
                   </li>
@@ -157,6 +161,10 @@ class App extends Component {
             <Route path="/customers">
               <CustomerList allCustomers={this.state.customers}
               selectCustomerCallback={this.selectCustomer} />
+            </Route>
+            <Route path="/movies">
+              <MovieCollection 
+                allMovies={this.state.movies} selectMovieCallback={this.selectMovie} />
             </Route>
             <Route path="/search">
               <Search addMovieCallback={this.addMovieToLibrary}/>
