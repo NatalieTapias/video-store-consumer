@@ -7,18 +7,19 @@ const Movie = (props) => {
 // };
 
     return (
-      <div className="movie-card">
-        <p>id {props.id}</p>
-        <p>title {props.title}</p>
-        <p>overview {props.overview}</p>
-        <p>release date {props.release_date}</p>
-        <img src={props.image_url} alt={props.title} /> 
-        <button
-          className="btn btn-primary movie--select-movie-btn"
-          onClick={() => { props.selectMovieCallback(props.id) }}
-        >
-          Select
-        </button>
+      <div class="col-sm-6">
+        <div className="card">
+          <h3 className="card-title">{props.title}</h3>
+          <div className="card-body">
+            <img src={props.image_url} alt={props.title} /> 
+            <p className="card-text">{props.overview} Released on: {props.release_date}</p>
+            <button
+              className="btn btn-primary movie--select-movie-btn"
+              onClick={() => { props.selectMovieCallback(props.id) }}>
+              Select
+            </button>
+          </div>
+        </div>      
       </div>
     )
   };
