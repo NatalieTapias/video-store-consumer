@@ -15,4 +15,15 @@ img {
 .card {
   height: 800px;
   margin-top: 50px;
+  border-style: none;
 }
+
+.card > * {
+  text-align: center;
+}
+
+.card > img {
+  margin-bottom: 20px;
+}
+
+

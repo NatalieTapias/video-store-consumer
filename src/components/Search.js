@@ -41,7 +41,6 @@ class Search extends Component {
         <>
         <form onSubmit={this.handleSubmit} className="container-sm">
           <div className="form-group">
-            <label>Search for a video:</label>
             <input 
               type="text"
               className="form-control"

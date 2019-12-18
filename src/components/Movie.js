@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Movie.css'
 
 class Movie extends Component {
 
@@ -22,7 +23,7 @@ class Movie extends Component {
 
     return (
       <a onClick={this.onClickToggleShowDetails} className="col-sm-2">
-          <div className="card">
+          <div className={this.state.showDetails ? "card" : "card card-expanded"} >
             <h3 className="card-title">{title}</h3>
             <div className="card-body">
               <img src={image_url} alt={title} /> 
@@ -32,11 +33,13 @@ class Movie extends Component {
                 <p>Released on: {release_date}</p>
                 </>
               )}
-              <button
-                className="btn btn-primary"
-                onClick={() => { selectMovieCallback(id) }}>
-                Select
-              </button>
+              <div>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => { selectMovieCallback(id) }}>
+                  Select
+                </button>
+              </div>
             </div>
           </div>  
       </a>
