@@ -11,7 +11,7 @@ class Movie extends Component {
     }
   };
 
-  toggleShowDetails = () => {
+  onClickToggleShowDetails = () => {
     let doesItShowDetails = this.state.showDetails;
     doesItShowDetails = !(this.state.showDetails);
     this.setState({showDetails: doesItShowDetails});
@@ -21,8 +21,7 @@ class Movie extends Component {
     const {title, image_url, overview, release_date, selectMovieCallback, id} = this.props;
 
     return (
-      <div className="col-sm-4">
-        <a onClick={this.toggleShowDetails}>
+      <a onClick={this.onClickToggleShowDetails} className="col-sm-2">
           <div className="card">
             <h3 className="card-title">{title}</h3>
             <div className="card-body">
@@ -39,9 +38,8 @@ class Movie extends Component {
                 Select
               </button>
             </div>
-          </div> 
-        </a>     
-      </div>
+          </div>  
+      </a>
       );
     }
   };
