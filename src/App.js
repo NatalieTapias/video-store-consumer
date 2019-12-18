@@ -129,7 +129,7 @@ class App extends Component {
                     <Link to='/' className="btn btn-primary">Home</Link>
                   </li>
                   <li>
-                    <Link to='/movies' className="btn btn-primary">Rental Library</Link>
+                    <Link to='/library' className="btn btn-primary">Rental Library</Link>
                   </li>
                  
                   <li>
@@ -162,7 +162,7 @@ class App extends Component {
               <CustomerList allCustomers={this.state.customers}
               selectCustomerCallback={this.selectCustomer} />
             </Route>
-            <Route path="/movies">
+            <Route path="/library">
               <MovieCollection 
                 allMovies={this.state.movies} selectMovieCallback={this.selectMovie} />
             </Route>
