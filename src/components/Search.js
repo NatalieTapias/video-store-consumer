@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SearchResult from './SearchResult';
+import PropTypes from 'prop-types';
 
 class Search extends Component {
 
@@ -86,3 +87,7 @@ class Search extends Component {
 }
 
 export default Search;
+
+Search.propTypes = {
+  addMovieCallback: PropTypes.func,
+}
