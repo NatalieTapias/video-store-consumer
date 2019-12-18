@@ -74,6 +74,10 @@ class App extends Component {
     const currentCustomer = customers.find((customer) => {
       return customer.id === id;
     });
+
+    this.setState({
+      selectedCustomer: currentCustomer,
+    });
   }
 
   addMovieToLibrary = (movie) => {
