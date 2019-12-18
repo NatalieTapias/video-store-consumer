@@ -1,4 +1,8 @@
-h1 {
+* {
+  font-family: 'Permanent Marker', cursive;
+}
+
+h1, .title {
   text-align: center;
 }
 

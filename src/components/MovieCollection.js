@@ -6,7 +6,7 @@ const MovieCollection = ({allMovies, selectMovieCallback}) => {
 
     return (
       <>
-      <h3>Rental Library</h3>
+      <h2 className="title">Rental Library</h2>
         <div className="row">
         
         {(allMovies).map((movie, i) => {
