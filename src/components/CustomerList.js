@@ -1,5 +1,6 @@
 import React from 'react';
 import Customer from './Customer';
+import PropTypes from 'prop-types';
 
 const CustomerList = ({allCustomers, selectCustomerCallback}) => {
   
@@ -21,3 +22,8 @@ const CustomerList = ({allCustomers, selectCustomerCallback}) => {
   };
   
 export default CustomerList;
+
+CustomerList.propTypes = {
+  allCustomers: PropTypes.array,
+  selectCustomerCallback: PropTypes.func,
+};

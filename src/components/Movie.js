@@ -4,7 +4,7 @@ import './Movie.css';
 const Movie = ({title, image_url, overview, release_date, selectMovieCallback, id}) => {
 
     return (
-      <div class="col-sm-4">
+      <div className="col-sm-4">
         <div className="card">
           <h3 className="card-title">{title}</h3>
           <div className="card-body">
