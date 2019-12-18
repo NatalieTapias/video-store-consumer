@@ -1,11 +1,11 @@
 import React from 'react';
 import Customer from './Customer';
 
-const CustomerList = (props) => {
+const CustomerList = ({allCustomers, selectCustomerCallback}) => {
   
     return (
       <div className="row">
-      {(props.allCustomers).map((oneCustomer, i) => {
+      {(allCustomers).map((oneCustomer, i) => {
         return(
           <Customer
             id={oneCustomer.id}
@@ -13,7 +13,7 @@ const CustomerList = (props) => {
             account_credit={oneCustomer.account_credit}
             movies_checked_out_count={oneCustomer.movies_checked_out_count}
             key={i}
-            selectCustomerCallback={props.selectCustomerCallback}
+            selectCustomerCallback={selectCustomerCallback}
             />);
           })}
       </div>
