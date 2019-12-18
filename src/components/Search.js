@@ -62,7 +62,7 @@ class Search extends Component {
       ) 
     } else {
       return (
-        <>
+        <div className="row">
         {(this.state.searchResults).map((movie, i) => {
         return(
           <SearchResult 
@@ -77,7 +77,7 @@ class Search extends Component {
           addMovieCallback={this.props.addMovieCallback} />
         )})
       }
-      </>
+      </div>
       );
     }
   };

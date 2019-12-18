@@ -12,7 +12,7 @@ const Movie = ({title, image_url, overview, release_date, selectMovieCallback, i
             <img src={image_url} alt={title} /> 
             <p className="card-text">{overview} Released on: {release_date}</p>
             <button
-              className="btn btn-primary movie--select-movie-btn"
+              className="btn btn-primary"
               onClick={() => { selectMovieCallback(id) }}>
               Select
             </button>
