@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Search from './Search';
 
 const SearchResult = ({title, overview, release_date, movie, addMovieCallback, image_url}) => {
 
@@ -14,3 +16,12 @@ const SearchResult = ({title, overview, release_date, movie, addMovieCallback, i
 }
 
 export default SearchResult;
+
+SearchResult.propTypes = {
+  title: PropTypes.string, 
+  overview: PropTypes.string,
+  release_date: PropTypes.string, 
+  movie: PropTypes.object, 
+  addMovieCallback: PropTypes.func, 
+  image_url: PropTypes.string,
+}
