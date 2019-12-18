@@ -123,21 +123,22 @@ class App extends Component {
           <header className="App-header">
             <h1>Kingrey & Tapias VideoStore</h1>
             <div>
-              <nav>
+              <nav className="navbar">
                 <ul>
                   <li>
-                    <Link to="/">Movies/MovieCollection</Link>
+                    <Link to="/" className="btn btn-primary">Rental Library</Link>
                   </li>
                   <li>
-                    <Link to="/customers">Customers</Link>
+                    <Link to="/customers" className="btn btn-primary">Customers</Link>
                   </li>
                   <li>
-                    <Link to="/search">Search</Link>
+                    <Link to="/search" className="btn btn-primary">Search</Link>
                   </li>
                 </ul>
               </nav>
             </div>
-
+            <div className="card">
+              {/* TODO: FINISH THE CARD DETAILS */}
             {this.state.selectedMovie && (
               <div><SelectedMovie movie={this.state.selectedMovie} /></div>
             )}
@@ -147,6 +148,7 @@ class App extends Component {
             {this.state.selectedCustomer && this.state.selectedMovie && (
               <button onClick={this.handleCheckoutMovieClick}>Checkout Movie</button>
             )}
+            </div>
           </header>
           
           <Switch>
