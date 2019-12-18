@@ -1,7 +1,14 @@
 
-
+.navbar {
+  height: 300px;
+}
 li {
   list-style: none;
+}
+
+img {
+  height: 180px;
+  width: auto;
 }
 /* this is the old app styling 
 .App {

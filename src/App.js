@@ -145,14 +145,8 @@ class App extends Component {
                         className="btn btn-secondary">Checkout Movie</button>
                     )}</li>
                   )}
-             </ul>
-           
-               
+                </ul>
               </nav>
-            </div>
-            <div className="card">
-              {/* TODO: FINISH THE CARD DETAILS */}
-            
             </div>
           </header>
           
