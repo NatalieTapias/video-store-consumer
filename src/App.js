@@ -18,13 +18,11 @@ class App extends Component {
     super();
 
     this.state = {
-     movies: [],
-     customers: [],
-     movieSearchResult: '',
-     selectedMovieDisplay: false,
-     selectedMovie: null,
-     selectedCustomerDisplay: false,
-     selectedCustomer: null
+      movies: [],
+      customers: [],
+      movieSearchResult: '',
+      selectedMovie: null,
+      selectedCustomer: null
     }
   };
 
@@ -69,20 +67,12 @@ class App extends Component {
       selectedMovie: currentMovie
     }
     );
-    this.setState({selectedMovieDisplay: true});
-    console.log(this.state.selectedMovie)
-    console.log(this.state.selectedMovieDisplay)
   }
 
   selectCustomer = (id) => {
     const customers = this.state.customers;
     const currentCustomer = customers.find((customer) => {
       return customer.id === id;
-    });
-
-    this.setState({
-      selectedCustomer: currentCustomer,
-      selectedCustomerDisplay: true
     });
   }
 
