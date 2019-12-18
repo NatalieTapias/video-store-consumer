@@ -1,5 +1,7 @@
 import React from 'react';
 import './Movie.css';
+import PropTypes from 'prop-types';
+
 
 const Movie = ({title, image_url, overview, release_date, selectMovieCallback, id}) => {
 
@@ -22,3 +24,12 @@ const Movie = ({title, image_url, overview, release_date, selectMovieCallback, i
   };
 
 export default Movie;
+
+Movie.propTypes = {
+  title: PropTypes.string,
+  image_url: PropTypes.string, 
+  overview: PropTypes.string, 
+  release_date: PropTypes.string, 
+  selectMovieCallback: PropTypes.func, 
+  id: PropTypes.number,
+}
