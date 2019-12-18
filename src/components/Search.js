@@ -63,13 +63,15 @@ class Search extends Component {
         {(this.state.searchResults).map((movie, i) => {
         return(
           <SearchResult 
+          movie={movie}
           id={movie.id}
           key={i}
           title={movie.title}
           overview={movie.overview}
           release_date={movie.release_date}
           image_url={movie.image_url}
-          external_id={movie.external_id} />
+          external_id={movie.external_id}
+          addMovieCallback={this.props.addMovieCallback} />
         )})
       }
       </>
