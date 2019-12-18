@@ -1,13 +1,10 @@
 import React from 'react';
+import './Movie.css';
 
 const Movie = (props) => {
 
-// selectMovie = (id) => {
-//   props.selectMovieCallback(id);
-// };
-
     return (
-      <div class="col-sm-6">
+      <div class="col-sm-4">
         <div className="card">
           <h3 className="card-title">{props.title}</h3>
           <div className="card-body">
