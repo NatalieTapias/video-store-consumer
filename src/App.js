@@ -22,9 +22,9 @@ class App extends Component {
      customers: [],
      movieSearchResult: '',
      selectedMovieDisplay: false,
-     selectedMovie: {},
+     selectedMovie: null,
      selectedCustomerDisplay: false,
-     selectedCustomer: {}
+     selectedCustomer: null
     }
   };
 
@@ -86,19 +86,35 @@ class App extends Component {
     });
   }
 
-
   addMovieToLibrary = (movie) => {
     console.log(movie);
     axios.post('http://localhost:3001/movies', movie)
     .then((response) => {
       const updatedMovieLibrary = this.state.movies;
       updatedMovieLibrary.push(response.data);
-      
+
       console.log(response.data);
       this.setState({
         movies: updatedMovieLibrary,
       });
       console.log('posted');
+    })
+    .catch((error) => {
+      this.setState({ error: error.message });
+    });
+  }
+
+  handleCheckoutMovieClick = () => {
+    const { selectedMovie, selectedCustomer } = this.state;
+    axios.post(
+      `http://localhost:3001/rentals/${selectedMovie.title}/check-out`, 
+      { 'customer_id': selectedCustomer.id } 
+    ).then((response) => {
+      const { data: customer } = response;
+      const customers = [...this.state.customers];
+      const customerIndex = customers.findIndex((c) => c.id === customer.id);
+      customers[customerIndex] = customer;
+      this.setState({ selectedCustomer: null, selectedMovie: null , customers });
     })
     .catch((error) => {
       this.setState({ error: error.message });
@@ -126,8 +142,16 @@ class App extends Component {
                 </ul>
               </nav>
             </div>
-            <div><SelectedMovie movie={this.state.selectedMovie} /></div>
-            <div><SelectedCustomer customer={this.state.selectedCustomer} /></div>
+
+            {this.state.selectedMovie && (
+              <div><SelectedMovie movie={this.state.selectedMovie} /></div>
+            )}
+            {this.state.selectedCustomer && (
+              <div><SelectedCustomer customer={this.state.selectedCustomer} /></div>
+            )}
+            {this.state.selectedCustomer && this.state.selectedMovie && (
+              <button onClick={this.handleCheckoutMovieClick}>Checkout Movie</button>
+            )}
           </header>
           
           <Switch>
