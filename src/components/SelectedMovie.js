@@ -1,12 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const SelectedMovie = (props) => {
+const SelectedMovie = ({movie}) => {
   return (
     <div>
-      <h3>Selected movie: {props.movie.title}</h3>
-      <img src={props.movie.image_url}  alt={props.movie.title}/>
+      <h3>Selected movie: {movie.title}</h3>
+      <img src={movie.image_url}  alt={movie.title}/>
     </div>
   );
 }
 
 export default SelectedMovie;
+
+SelectedMovie.propTypes = {
+  movie: PropTypes.object,
+}

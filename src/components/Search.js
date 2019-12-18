@@ -31,10 +31,7 @@ class Search extends Component {
         searchResults: foundMovie,
         showSearchResult: true,
       });
-      console.log('foundMovie', foundMovie);
     })
-    console.log('handleSubmit', this.state.searchTerm);
-  
   };
 
 

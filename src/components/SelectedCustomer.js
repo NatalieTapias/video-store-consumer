@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SelectedCustomer = ({customer.name: customer}) => {
+const SelectedCustomer = ({customer}) => {
   return (
     <span>
-      Selected Customer: {customer}
+      Selected Customer: {customer.name}
     </span>
   
   );
@@ -13,5 +13,5 @@ const SelectedCustomer = ({customer.name: customer}) => {
 export default SelectedCustomer;
 
 SelectedCustomer.propTypes = {
-  customer: PropTypes.string,
+  customer: PropTypes.object,
 };

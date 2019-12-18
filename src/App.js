@@ -82,17 +82,14 @@ class App extends Component {
   }
 
   addMovieToLibrary = (movie) => {
-    console.log(movie);
     axios.post('http://localhost:3001/movies', movie)
     .then((response) => {
       const updatedMovieLibrary = this.state.movies;
       updatedMovieLibrary.push(response.data);
 
-      console.log(response.data);
       this.setState({
         movies: updatedMovieLibrary,
       });
-      console.log('posted');
     })
     .catch((error) => {
       this.setState({ error: error.message });
