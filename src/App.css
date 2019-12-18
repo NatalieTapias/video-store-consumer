@@ -1,6 +1,8 @@
 
 
-
+li {
+  list-style: none;
+}
 /* this is the old app styling 
 .App {
   text-align: center;

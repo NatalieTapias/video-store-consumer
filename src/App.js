@@ -124,7 +124,7 @@ class App extends Component {
             <h1>Kingrey & Tapias VideoStore</h1>
             <div>
               <nav className="navbar">
-                <ul>
+                <ul className="row">
                   <li>
                     <Link to="/" className="btn btn-primary">Rental Library</Link>
                   </li>
@@ -134,20 +134,25 @@ class App extends Component {
                   <li>
                     <Link to="/search" className="btn btn-primary">Search</Link>
                   </li>
-                </ul>
+                  {this.state.selectedMovie && (
+                    <li><SelectedMovie movie={this.state.selectedMovie} /></li>
+                  )}
+                  {this.state.selectedCustomer && (
+                    <li><SelectedCustomer customer={this.state.selectedCustomer} />
+                    {this.state.selectedCustomer && this.state.selectedMovie && (
+                      <button 
+                        onClick={this.handleCheckoutMovieClick} 
+                        className="btn btn-secondary">Checkout Movie</button>
+                    )}</li>
+                  )}
+             </ul>
+           
+               
               </nav>
             </div>
             <div className="card">
               {/* TODO: FINISH THE CARD DETAILS */}
-            {this.state.selectedMovie && (
-              <div><SelectedMovie movie={this.state.selectedMovie} /></div>
-            )}
-            {this.state.selectedCustomer && (
-              <div><SelectedCustomer customer={this.state.selectedCustomer} /></div>
-            )}
-            {this.state.selectedCustomer && this.state.selectedMovie && (
-              <button onClick={this.handleCheckoutMovieClick}>Checkout Movie</button>
-            )}
+            
             </div>
           </header>
           
