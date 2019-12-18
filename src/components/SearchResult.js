@@ -1,14 +1,14 @@
 import React from 'react';
 
-const SearchResult = (props) => {
+const SearchResult = ({title, overview, release_date, movie, addMovieCallback, image_url}) => {
 
   return (
     <p>
-      <p>title {props.title}</p>
-      <p>overview {props.overview}</p>
-      <p>release date {props.release_date}</p>
-      <img src={props.image_url}  alt={props.title}/>
-      <button onClick={ () => { props.addMovieCallback(props.movie)} }> Add {props.title} to Rental Library</button>
+      <p>title {title}</p>
+      <p>overview {overview}</p>
+      <p>release date {release_date}</p>
+      <img src={image_url}  alt={title}/>
+      <button onClick={ () => { addMovieCallback(movie)} }> Add {title} to Rental Library</button>
     </p>
   )
 }
