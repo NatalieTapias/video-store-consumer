@@ -4,7 +4,7 @@ import Customer from './Customer';
 const CustomerList = (props) => {
   
     return (
-      <>
+      <div className="row">
       {(props.allCustomers).map((oneCustomer, i) => {
         return(
           <Customer
@@ -16,7 +16,7 @@ const CustomerList = (props) => {
             selectCustomerCallback={props.selectCustomerCallback}
             />);
           })}
-      </>
+      </div>
     );
   };
   
