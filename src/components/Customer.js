@@ -1,7 +1,8 @@
 import React from 'react';
 import './Customer.css';
+import PropTypes from 'prop-types';
 
-const Customer = ({name, account_credit, movies_checked_out_count, id, selectCustomerCallback}) => {
+const Customer = ({id, name, account_credit, movies_checked_out_count, selectCustomerCallback}) => {
   
     return (
       <div className="col-sm-4">
@@ -21,3 +22,11 @@ const Customer = ({name, account_credit, movies_checked_out_count, id, selectCus
   };
   
 export default Customer;
+
+Customer.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  account_credit: PropTypes.number,
+  movies_checked_out_count: PropTypes.number,
+  selectCustomerCallback: PropTypes.func,
+};
