@@ -1,5 +1,6 @@
 import React from 'react';
 import Movie from './Movie'
+import PropTypes from 'prop-types';
 
 const MovieCollection = ({allMovies, selectMovieCallback}) => {
 
@@ -22,3 +23,8 @@ const MovieCollection = ({allMovies, selectMovieCallback}) => {
   };
 
 export default MovieCollection;
+
+MovieCollection.propTypes = {
+  allMovies: PropTypes.array,
+  selectMovieCallback: PropTypes.func,
+};
