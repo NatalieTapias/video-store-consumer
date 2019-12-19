@@ -11,6 +11,7 @@ class Search extends Component {
       searchResult: '',
       searchTerm: '',
       showSearchResult: false,
+      noResults: false,
     }
   }
 
@@ -25,17 +26,28 @@ class Search extends Component {
 
     axios.get(`http://localhost:3001/movies?query=${this.state.searchTerm}`)
     .then((response) => {
+
       let foundMovie = response.data;
 
-      this.setState({ 
+      const foundState = {
         searchResults: foundMovie,
-        showSearchResult: true,
-      });
-    })
-  };
+        showSearchResult: true,};
+
+      const notFoundState = {
+        showSearchResult: false,
+        noResults: true,};
+
+      foundMovie.length === 0 ? this.setState(notFoundState) : this.setState(foundState)
+      console.log(this.state)
+  })};
 
 
   render() {
+    if (this.state.noResults === true) {
+      return (
+      <p>No movies with that title found</p>
+      )
+    }
     if (this.state.showSearchResult === false) {
       return (
         <>

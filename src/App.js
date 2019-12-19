@@ -82,6 +82,7 @@ class App extends Component {
     });
   }
 
+  
   addMovieToLibrary = (movie) => {
     axios.post('http://localhost:3001/movies', movie)
     .then((response) => {
