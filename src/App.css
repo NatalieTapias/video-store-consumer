@@ -8,6 +8,10 @@ h1, .title, .card-title, .selected{
   font-family: 'Permanent Marker', cursive;
 }
 
+h3 {
+  text-align: center;
+}
+
 .selected-customer-name, .movie {
   color: red;
 }

@@ -45,7 +45,24 @@ class Search extends Component {
   render() {
     if (this.state.noResults === true) {
       return (
-      <p>No movies with that title found</p>
+      <>
+    <h3>No movies with title <i>{this.state.searchTerm} </i>found</h3><br/>
+      <form onSubmit={this.handleSubmit} className="container-sm">
+      <div className="form-group">
+        <input 
+          type="text"
+          className="form-control"
+          placeholder="movie title"
+          onChange={this.handleChange} />
+        <small id="textHelp">Enter the name of a movie to search on The Movie Database</small>
+      </div>
+        <input 
+          type="submit" 
+          value="Submit" 
+          onClick={this.handleSubmit}
+          className="btn btn-primary" />
+    </form>
+    </>
       )
     }
     if (this.state.showSearchResult === false) {
