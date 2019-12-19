@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 
 const SelectedCustomer = ({customer}) => {
   return (
-    <span>
-      Selected Customer: {customer.name}
+    <span className="selected">
+      <h3>Selected Customer: 
+        <div className="selected-customer-name">{customer.name}</div>
+      </h3> 
     </span>
   
   );
