@@ -12,7 +12,8 @@ import MovieCollection from './components/MovieCollection';
 import CustomerList from './components/CustomerList';
 import Search from './components/Search';
 import SelectedMovie from './components/SelectedMovie';
-import SelectedCustomer from './components/SelectedCustomer'
+import SelectedCustomer from './components/SelectedCustomer';
+
 
 class App extends Component {
   constructor() {
@@ -128,7 +129,6 @@ class App extends Component {
                   <li>
                     <Link to='/library' className="btn btn-primary">Rental Library</Link>
                   </li>
-                 
                   <li>
                     <Link to="/customers" className="btn btn-primary">Customers</Link>
                   </li>
