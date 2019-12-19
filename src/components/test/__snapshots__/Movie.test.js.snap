@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie that it matches the existing snapshot 1`] = `
+<DocumentFragment>
+  <a
+    class="col-sm-2"
+  >
+    <div
+      class="card card-expanded"
+    >
+      <h3
+        class="card-title"
+      >
+        excellent movie
+      </h3>
+      <div
+        class="card-body"
+      >
+        <img
+          alt="excellent movie"
+          src="movie.image_url"
+        />
+        <div>
+          <button
+            class="btn btn-primary"
+          >
+            Select
+          </button>
+        </div>
+      </div>
+    </div>
+  </a>
+</DocumentFragment>
+`;
