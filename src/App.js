@@ -118,7 +118,7 @@ class App extends Component {
     return (
       <div className="app">
         <Router>
-          <header className="jumbotron jumbotron-fluid">
+          <header className="jumbotron">
             <h1>Kingrey & Tapias VideoStore</h1>
             <div>
               <nav className="navbar">

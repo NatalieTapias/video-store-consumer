@@ -1,9 +1,16 @@
-* {
+h1, .title {
+  font-size: 4rem;
+  color: grey;
+}
+
+h1, .title, .card-title{
+  text-align: center;
   font-family: 'Permanent Marker', cursive;
 }
 
-h1, .title {
-  text-align: center;
+.jumbotron  {
+  background-color: #f7c7c3;
+  
 }
 
 li {
@@ -17,7 +24,7 @@ img {
 }
 
 .card {
-  height: 800px;
+  height: 600px;
   margin-top: 50px;
   border-style: none;
 }
@@ -28,6 +35,30 @@ img {
 
 .card > img {
   margin-bottom: 20px;
+}
+
+.card > .btn {
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background-color: red;
+  border-color: red;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+  background-color: red;
+  border-color: red;
+}
+
+.card > .btn-primary, .card {
+  background-color: #f7c7c3;
+  border-color: #f7c7c3;
+}
+
+.card > .btn-primary:hover, .card > .btn-primary:active, .card > .btn-primary:focus {
+  background-color: #f7c7c3;
+  border-color: #f7c7c3;
 }
 
 
