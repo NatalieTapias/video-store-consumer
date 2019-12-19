@@ -45,7 +45,7 @@ class Search extends Component {
               type="text"
               className="form-control"
               value={this.state.searchTerm}
-              placeholder="enter search term here"
+              placeholder="movie title"
               onChange={this.handleChange} />
             <small id="textHelp">Enter the name of a movie to search on The Movie Database</small>
           </div>
