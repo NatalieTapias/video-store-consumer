@@ -46,7 +46,7 @@ class Search extends Component {
     if (this.state.noResults === true) {
       return (
       <>
-    <h3>No movies with title <i>{this.state.searchTerm} </i>found</h3><br/>
+    <h3>No movies with title <em>{this.state.searchTerm} </em >found</h3><br/>
       <form onSubmit={this.handleSubmit} className="container-sm">
       <div className="form-group">
         <input 
