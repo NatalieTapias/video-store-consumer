@@ -16,7 +16,6 @@ class Search extends Component {
     }
   }
 
-
   handleChange = (event) => {
     const newState = {};
     newState.searchTerm = event.target.value;
@@ -41,13 +40,11 @@ class Search extends Component {
         movieSought: this.state.searchTerm};
       
       foundMovie.length === 0 ? this.setState(notFoundState) : this.setState(foundState)
-      // console.log(movieSought)
   })};
 
   refreshPage = () => {
     window.location.reload(false)
   }
-
 
   render() {
     if (this.state.noResults === true) {
