@@ -86,6 +86,7 @@ class Search extends Component {
       ) 
     } else {
       return (
+        <section>
         <div className="row">
         {(this.state.searchResults).map((movie, i) => {
         return(
@@ -102,6 +103,12 @@ class Search extends Component {
         )})
       }
       </div>
+      <div className="try-again">
+        <br/>
+        <button className="btn btn-primary" onClick={() => window.location.reload(false)}>Search again</button>
+      </div>
+      </section>
+      
       );
     }
   };
