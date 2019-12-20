@@ -165,7 +165,7 @@ class App extends Component {
                 allMovies={this.state.movies} selectMovieCallback={this.selectMovie} />
             </Route>
             <Route path="/search">
-              <Search addMovieCallback={this.addMovieToLibrary} />
+              <Search addMovieCallback={this.addMovieToLibrary} allMovies={this.state.movies} />
             </Route> 
             <Route path="/">
               <MovieCollection 

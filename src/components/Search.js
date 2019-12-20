@@ -32,7 +32,8 @@ class Search extends Component {
 
       const foundState = {
         searchResults: foundMovie,
-        showSearchResult: true,};
+        showSearchResult: true,
+      };
 
       const notFoundState = {
         showSearchResult: false,
@@ -96,7 +97,8 @@ class Search extends Component {
           release_date={movie.release_date}
           image_url={movie.image_url}
           external_id={movie.external_id}
-          addMovieCallback={this.props.addMovieCallback} />
+          addMovieCallback={this.props.addMovieCallback}
+          allMovies={this.props.allMovies}/>
         )})
       }
       </div>

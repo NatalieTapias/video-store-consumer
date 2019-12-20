@@ -1,8 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MovieCollection from './MovieCollection'
+// import MovieCollection from './MovieCollection'
 
-const SearchResult = ({title, overview, release_date, movie, addMovieCallback, image_url, external_id}) => {
+const SearchResult = ({title, overview, release_date, movie, addMovieCallback, image_url, external_id, allMovies}) => {
+  // if else to determine button
+// if external_id of found movie matches external_id of a movie in the rental library , no button
+// some is like find but returns true or false
+// otherwise,
+
+const alreadyInLibrary = (movie) => {
+  return movie.external_id === external_id;
+}
+
+console.log(allMovies.some(alreadyInLibrary))
+
   return (
     <div className="col-sm-4">
       <div className="card">
