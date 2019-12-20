@@ -55,7 +55,7 @@ class Search extends Component {
     <div className="try-again">
     <h1>No Results</h1>
     <h3>No movies with title <em> {this.state.movieSought} </em >found</h3><br/>
-    <button className="btn btn-primary" onClick={() => window.location.reload(false)}>Search again</button>
+    <button className="btn btn-primary--search-again"  onClick={() => window.location.reload(false)}>Search again</button>
 
     </div>
       )
@@ -78,7 +78,7 @@ class Search extends Component {
               type="submit" 
               value="Submit" 
               onClick={this.handleSubmit}
-              className="btn btn-primary" />
+              className="btn btn-primary"  />
         </form>
         
       
@@ -105,7 +105,7 @@ class Search extends Component {
       </div>
       <div className="try-again">
         <br/>
-        <button className="btn btn-primary" onClick={() => window.location.reload(false)}>Search again</button>
+        <button className="btn btn-primary--search-again" onClick={() => window.location.reload(false)}>Search again</button><br/>
       </div>
       </section>
       
