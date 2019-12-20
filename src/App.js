@@ -29,7 +29,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    axios.get('http://localhost:3001/movies')
+    axios.get('https://nt-jk-video-store-consumer-api.herokuapp.com/movies')
     .then((response) => {
       let moviesListFromApi = response.data.map((movieData) => {
         return movieData;   
@@ -44,7 +44,7 @@ class App extends Component {
       this.setState({ error: error.message });
     });
 
-    axios.get('http://localhost:3001/customers')
+    axios.get('https://nt-jk-video-store-consumer-api.herokuapp.com/customers')
     .then((response) => {
       let customersListFromApi = response.data.map((customerData) => {
         return customerData;   
@@ -84,7 +84,7 @@ class App extends Component {
 
 
   addMovieToLibrary = (movie) => {
-    axios.post('http://localhost:3001/movies', movie)
+    axios.post('https://nt-jk-video-store-consumer-api.herokuapp.com/movies', movie)
     .then((response) => {
       const updatedMovieLibrary = this.state.movies;
       updatedMovieLibrary.push(response.data);
@@ -101,7 +101,7 @@ class App extends Component {
   handleCheckoutMovieClick = () => {
     const { selectedMovie, selectedCustomer } = this.state;
     axios.post(
-      `http://localhost:3001/rentals/${selectedMovie.title}/check-out`, 
+      `https://nt-jk-video-store-consumer-api.herokuapp.com/rentals/${selectedMovie.title}/check-out`, 
       { 'customer_id': selectedCustomer.id } 
     ).then((response) => {
       const { data: customer } = response;

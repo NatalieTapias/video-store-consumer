@@ -25,7 +25,7 @@ class Search extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    axios.get(`http://localhost:3001/movies?query=${this.state.searchTerm}`)
+    axios.get(`https://nt-jk-video-store-consumer-api.herokuapp.com/movies?query=${this.state.searchTerm}`)
     .then((response) => {
 
       const foundMovie = response.data;
