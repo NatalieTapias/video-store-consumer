@@ -82,7 +82,7 @@ class App extends Component {
     });
   }
 
-  
+
   addMovieToLibrary = (movie) => {
     axios.post('http://localhost:3001/movies', movie)
     .then((response) => {
@@ -134,7 +134,7 @@ class App extends Component {
                     <Link to="/customers" className="btn btn-primary">Customers</Link>
                   </li>
                   <li>
-                    <Link to="/search" className="btn btn-primary">Search</Link>
+                    <Link to="/search" className="btn btn-primary" target="_self">Search</Link>
                   </li>
                   <li>
                     {this.state.selectedMovie && (
@@ -156,6 +156,9 @@ class App extends Component {
           </header>
           
           <Switch>
+          <Route path="/search">
+              <Search addMovieCallback={this.addMovieToLibrary}/>
+            </Route> 
             <Route path="/customers">
               <CustomerList allCustomers={this.state.customers}
               selectCustomerCallback={this.selectCustomer} />
@@ -164,9 +167,9 @@ class App extends Component {
               <MovieCollection 
                 allMovies={this.state.movies} selectMovieCallback={this.selectMovie} />
             </Route>
-            <Route path="/search">
-              <Search addMovieCallback={this.addMovieToLibrary}/>
-            </Route> 
+            {/* <Route path="/search">
+              <Search addMovieCallback={this.addMovieToLibrary} key={Math.random()}/>
+            </Route>  */}
             <Route path="/">
               <MovieCollection 
                 allMovies={this.state.movies} selectMovieCallback={this.selectMovie} />

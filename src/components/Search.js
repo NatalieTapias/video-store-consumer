@@ -12,8 +12,10 @@ class Search extends Component {
       searchTerm: '',
       showSearchResult: false,
       noResults: false,
+      movieSought: '',
     }
   }
+
 
   handleChange = (event) => {
     const newState = {};
@@ -27,7 +29,7 @@ class Search extends Component {
     axios.get(`http://localhost:3001/movies?query=${this.state.searchTerm}`)
     .then((response) => {
 
-      let foundMovie = response.data;
+      const foundMovie = response.data;
 
       const foundState = {
         searchResults: foundMovie,
@@ -35,39 +37,33 @@ class Search extends Component {
 
       const notFoundState = {
         showSearchResult: false,
-        noResults: true,};
-
+        noResults: true,
+        movieSought: this.state.searchTerm};
+      
       foundMovie.length === 0 ? this.setState(notFoundState) : this.setState(foundState)
-      console.log(this.state)
+      // console.log(movieSought)
   })};
+
+  refreshPage = () => {
+    window.location.reload(false)
+  }
 
 
   render() {
     if (this.state.noResults === true) {
       return (
-      <>
-    <h3>No movies with title <em>{this.state.searchTerm} </em >found</h3><br/>
-      <form onSubmit={this.handleSubmit} className="container-sm">
-      <div className="form-group">
-        <input 
-          type="text"
-          className="form-control"
-          placeholder="movie title"
-          onChange={this.handleChange} />
-        <small id="textHelp">Enter the name of a movie to search on The Movie Database</small>
-      </div>
-        <input 
-          type="submit" 
-          value="Submit" 
-          onClick={this.handleSubmit}
-          className="btn btn-primary" />
-    </form>
-    </>
+    <div className="try-again">
+    <h1>No Results</h1>
+    <h3>No movies with title <em> {this.state.movieSought} </em >found</h3><br/>
+    <button className="btn btn-primary" onClick={() => window.location.reload(false)}>Search again</button>
+
+    </div>
       )
     }
-    if (this.state.showSearchResult === false) {
+    else if (this.state.showSearchResult === false) {
       return (
         <>
+        <h1>Search</h1>
         <form onSubmit={this.handleSubmit} className="container-sm">
           <div className="form-group">
             <input 

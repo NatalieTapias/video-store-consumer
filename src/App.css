@@ -8,10 +8,6 @@ h1, .title, .card-title, .selected{
   font-family: 'Permanent Marker', cursive;
 }
 
-h3 {
-  text-align: center;
-}
-
 .selected-customer-name, .movie {
   color: red;
 }
@@ -71,6 +67,10 @@ img {
 .card > .btn-primary:hover, .card > .btn-primary:active, .card > .btn-primary:focus {
   background-color: #f7c7c3;
   border-color: #f7c7c3;
+}
+
+.try-again {
+  margin-left: 8em;
 }
 
 
