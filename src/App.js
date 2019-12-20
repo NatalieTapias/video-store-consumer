@@ -82,6 +82,7 @@ class App extends Component {
     });
   }
 
+
   addMovieToLibrary = (movie) => {
     axios.post('http://localhost:3001/movies', movie)
     .then((response) => {
@@ -164,7 +165,7 @@ class App extends Component {
                 allMovies={this.state.movies} selectMovieCallback={this.selectMovie} />
             </Route>
             <Route path="/search">
-              <Search addMovieCallback={this.addMovieToLibrary}/>
+              <Search addMovieCallback={this.addMovieToLibrary} />
             </Route> 
             <Route path="/">
               <MovieCollection 

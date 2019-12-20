@@ -6,7 +6,7 @@ const CustomerList = ({allCustomers, selectCustomerCallback}) => {
   
     return (
       <>
-        <h2 className="title">Rental Library</h2>
+        <h2 className="title">All Customers</h2>
         <div className="row">
         {(allCustomers).map((oneCustomer, i) => {
           return(
