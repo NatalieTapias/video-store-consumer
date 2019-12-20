@@ -8,6 +8,10 @@ h1, .title, .card-title, .selected{
   font-family: 'Permanent Marker', cursive;
 }
 
+h3 {
+  text-align: center;
+}
+
 .selected-customer-name, .movie {
   color: red;
 }
@@ -54,10 +58,20 @@ img {
   border-color: red;
 }
 
+.btn-primary--search-again {
+  display: block;
+  max-width: 500px;
+  background-color: #f7c7c3;
+  border-color: red;
+  width: 50%;
+  margin: auto;
+}
+
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
   background-color: red;
   border-color: red;
 }
+
 
 .card > .btn-primary, .card {
   background-color: #f7c7c3;
@@ -68,5 +82,7 @@ img {
   background-color: #f7c7c3;
   border-color: #f7c7c3;
 }
+
+
 
 

@@ -11,6 +11,8 @@ class Search extends Component {
       searchResult: '',
       searchTerm: '',
       showSearchResult: false,
+      noResults: false,
+      movieSought: '',
     }
   }
 
@@ -25,27 +27,47 @@ class Search extends Component {
 
     axios.get(`http://localhost:3001/movies?query=${this.state.searchTerm}`)
     .then((response) => {
-      let foundMovie = response.data;
 
-      this.setState({ 
+      const foundMovie = response.data;
+
+      const foundState = {
         searchResults: foundMovie,
-        showSearchResult: true,
-      });
-    })
-  };
+        showSearchResult: true,};
 
+      const notFoundState = {
+        showSearchResult: false,
+        noResults: true,
+        movieSought: this.state.searchTerm};
+      
+      foundMovie.length === 0 ? this.setState(notFoundState) : this.setState(foundState)
+  })};
+
+  refreshPage = () => {
+    window.location.reload(false)
+  }
 
   render() {
-    if (this.state.showSearchResult === false) {
+    if (this.state.noResults === true) {
+      return (
+    <div className="try-again">
+    <h1>No Results</h1>
+    <h3>No movies with title <em> {this.state.movieSought} </em >found</h3><br/>
+    <button className="btn btn-primary--search-again"  onClick={() => window.location.reload(false)}>Search again</button>
+
+    </div>
+      )
+    }
+    else if (this.state.showSearchResult === false) {
       return (
         <>
+        <h1>Search</h1>
         <form onSubmit={this.handleSubmit} className="container-sm">
           <div className="form-group">
             <input 
               type="text"
               className="form-control"
               value={this.state.searchTerm}
-              placeholder="enter search term here"
+              placeholder="movie title"
               onChange={this.handleChange} />
             <small id="textHelp">Enter the name of a movie to search on The Movie Database</small>
           </div>
@@ -53,7 +75,7 @@ class Search extends Component {
               type="submit" 
               value="Submit" 
               onClick={this.handleSubmit}
-              className="btn btn-primary" />
+              className="btn btn-primary"  />
         </form>
         
       
@@ -61,6 +83,7 @@ class Search extends Component {
       ) 
     } else {
       return (
+        <section>
         <div className="row">
         {(this.state.searchResults).map((movie, i) => {
         return(
@@ -77,6 +100,12 @@ class Search extends Component {
         )})
       }
       </div>
+      <div className="try-again">
+        <br/>
+        <button className="btn btn-primary--search-again" onClick={() => window.location.reload(false)}>Search again</button><br/>
+      </div>
+      </section>
+      
       );
     }
   };
